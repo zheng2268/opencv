@@ -112,6 +112,11 @@ static const struct VideoBackendInfo builtin_backends[] =
     DECLARE_STATIC_BACKEND(CAP_V4L, "V4L_BSD", MODE_CAPTURE_ALL, create_V4L_capture_file, create_V4L_capture_cam, 0)
 #endif
 
+//add for aw csi camera
+#if defined HAVE_CAMAWCSI
+    DECLARE_STATIC_BACKEND(CAP_AWCSI, "AWCSI", MODE_CAPTURE_ALL, 0, create_awcsi_capture_cam, 0)
+#endif
+
     // FFmpeg webcamera by underlying backend (DShow, V4L2, AVFoundation)
 #ifdef HAVE_FFMPEG
     DECLARE_STATIC_BACKEND(CAP_FFMPEG, "FFMPEG", MODE_CAPTURE_BY_INDEX, 0, cvCreateCameraCapture_FFMPEG_proxy, 0)

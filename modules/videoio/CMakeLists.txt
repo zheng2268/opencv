@@ -142,6 +142,14 @@ if(TARGET ocv.3rdparty.v4l)
   list(APPEND tgts ocv.3rdparty.v4l)
 endif()
 
+if(TARGET ocv.3rdparty.awcsi)
+  list(APPEND videoio_srcs ${CMAKE_CURRENT_LIST_DIR}/src/cap_aw_csi.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/src/aw_g2d.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/src/aw_dmabuf.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/src/aw_dmabuf_pool.cpp)
+  list(APPEND tgts ocv.3rdparty.awcsi AWIspApi isp_ini isp pthread)
+endif()
+
 if(TARGET ocv.3rdparty.openni2)
   list(APPEND videoio_srcs ${CMAKE_CURRENT_LIST_DIR}/src/cap_openni2.cpp)
   list(APPEND tgts ocv.3rdparty.openni2)

@@ -366,6 +366,9 @@ OCV_OPTION(WITH_TIFF "Include TIFF support" ON
 OCV_OPTION(WITH_V4L "Include Video 4 Linux support" ON
   VISIBLE_IF UNIX AND NOT ANDROID AND NOT APPLE
   VERIFY HAVE_CAMV4L OR HAVE_CAMV4L2 OR HAVE_VIDEOIO)
+OCV_OPTION(WITH_AW_CSI "Include AW CSI Camera support" ON
+  VISIBLE_IF UNIX AND NOT ANDROID AND NOT APPLE
+  VERIFY HAVE_CAMAWCSI)
 OCV_OPTION(WITH_DSHOW "Build VideoIO with DirectShow support" ON
   VISIBLE_IF WIN32 AND NOT ARM AND NOT WINRT
   VERIFY HAVE_DSHOW)
@@ -1677,6 +1680,14 @@ if(WITH_V4L OR HAVE_V4L)
     IF HAVE_VIDEOIO THEN "sys/videoio.h"
     ELSE "NO")
   status("    v4l/v4l2:" HAVE_V4L THEN "YES (${v4l_status})" ELSE NO)
+endif()
+
+
+if(WITH_AW_CSI OR HAVE_CAMAWCSI)
+  ocv_build_features_string(awcsi_status
+    IF HAVE_CAMAWCSI THEN "AWIspApi.h"
+    ELSE "NO")
+  status("    awcsi:" HAVE_CAMAWCSI THEN "YES (${awcsi_status})" ELSE NO)
 endif()
 
 if(WITH_DSHOW OR HAVE_DSHOW)

@@ -60,7 +60,10 @@ enum
     CV_CAP_FFMPEG = 1900,    // FFMPEG
     CV_CAP_IMAGES = 2000,    // OpenCV Image Sequence (e.g. img_%02d.jpg)
 
-    CV_CAP_ARAVIS = 2100     // Aravis GigE SDK
+    CV_CAP_ARAVIS = 2100,     // Aravis GigE SDK
+
+    //add for aw csi camera
+    CV_CAP_AWCSI = 2200
 };
 
 enum

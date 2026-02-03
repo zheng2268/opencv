@@ -653,6 +653,14 @@ bool VideoCapture::waitAny(const std::vector<VideoCapture>& streams,
     CV_UNUSED(timeoutNs);
 #endif
     CV_Error(Error::StsNotImplemented, "VideoCapture::waitAny() is supported by V4L backend only");
+
+#if (defined HAVE_AWCSI)
+    if( backend == CAP_AWCSI )
+    {
+        //TODO
+    }
+#endif
+
 }
 
 

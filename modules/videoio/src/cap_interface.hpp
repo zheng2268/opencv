@@ -361,6 +361,9 @@ Ptr<IVideoWriter> cvCreateVideoWriter_MSMF(const std::string& filename, int four
 
 Ptr<IVideoCapture> create_DShow_capture(int index, const VideoCaptureParameters& params);
 
+//add for aw csi camera
+Ptr<IVideoCapture> create_awcsi_capture_cam(int index);
+
 Ptr<IVideoCapture> create_V4L_capture_cam(int index);
 Ptr<IVideoCapture> create_V4L_capture_file(const std::string &filename);
 

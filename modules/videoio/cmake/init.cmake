@@ -11,6 +11,7 @@ endmacro()
 add_backend("ffmpeg" WITH_FFMPEG)
 add_backend("gstreamer" WITH_GSTREAMER)
 add_backend("v4l" WITH_V4L)
+add_backend("awcsi" WITH_AW_CSI)
 
 add_backend("aravis" WITH_ARAVIS)
 add_backend("dc1394" WITH_1394)
